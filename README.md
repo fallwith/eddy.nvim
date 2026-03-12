@@ -19,4 +19,5 @@ Enable with the usual `colorscheme` command.
 
 ```lua
 vim.cmd[[colorscheme eddy]]
+vim.cmd[[colorscheme eddy-oxbow]]  -- oxbow is the default flavor
 ```

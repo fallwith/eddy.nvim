@@ -1,23 +1,44 @@
 local M = {
   name  = "eddy",
   theme = {
-    dark = {
+    oxbow = {
       background = "dark",
       palette    = {
-        bg           = "#1a2821", -- desaturated pine green
-        bg_highlight = "#22332b", -- elevated pine green
+        -- base surfaces - desaturated pine green
+        bg           = "#1a2821",
 
-        fg           = "#e8e3d5", -- warm parchment
-        fg_bright    = "#ede7d9", -- brighter parchment emphasis text
-        fg_gutter    = "#82937f", -- muted olive-gray
+        -- elevated surfaces - lighter green
+        bg_highlight = "#22332b",
 
-        blue         = "#adcbe0", -- soft powder blue
-        gray         = "#a79f95", -- warm gray
-        green        = "#c8dfb8", -- soft sage green
-        orange       = "#d69f73", -- muted amber orange
-        red          = "#cc9488", -- muted clay red
-        violet       = "#d8bdd3", -- soft mauve violet
-        yellow       = "#d8c39a", -- muted sand gold
+        -- primary text - warm parchment
+        fg           = "#e8e3d5",
+
+        -- emphasis text - brighter parchment
+        fg_bright    = "#ede7d9",
+
+        -- ui - muted olive gray
+        fg_gutter    = "#82937f",
+
+        -- comments - warm grey
+        gray         = "#a79f95",
+
+        -- informational values - soft powder blue
+        blue         = "#adcbe0",
+
+        -- strings, declarative content, positive state - soft sage green
+        green        = "#c8dfb8",
+
+        -- active attention and selections - muted amber
+        orange       = "#d69f73",
+
+        -- control flow, operators, and errors - muted clay red
+        red          = "#cc9488",
+
+        -- hints and secondary metadata - soft mauve violet
+        violet       = "#d8bdd3",
+
+        -- types and search state - muted sand gold
+        yellow       = "#d8c39a",
       },
     },
   }
@@ -44,7 +65,7 @@ end
 --- @param config table|nil Theme config table.
 function M.setup(config)
   if not config then
-    config = { theme = "dark" }
+    config = { theme = "oxbow" }
   end
 
   local theme = M.theme[config.theme]
@@ -77,7 +98,7 @@ function M.setup(config)
   set_highlight("LineNr", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("LineNrAbove", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("LineNrBelow", { fg = palette.fg_gutter, bg = palette.bg })
-  set_highlight("MatchParen", { bg = palette.orange })
+  set_highlight("MatchParen", { fg = palette.orange, bold = true })
   set_highlight("NonText", { fg = palette.fg_gutter })
   set_highlight("Normal", { fg = palette.fg, bg = palette.bg })
   set_highlight("NormalFloat", { fg = palette.fg, bg = palette.bg_highlight })
@@ -117,7 +138,7 @@ function M.setup(config)
   set_highlight("Comment", { fg = palette.gray })
   set_highlight("Conceal", { fg = palette.fg_gutter })
   set_highlight("Conditional", { fg = palette.red })
-  set_highlight("Constant", { fg = palette.violet })
+  set_highlight("Constant", { fg = palette.blue })
   set_highlight("Decorator", { fg = palette.green })
   set_highlight("Define", { fg = palette.green })
   set_highlight("Delimiter", { fg = palette.fg })
@@ -130,7 +151,7 @@ function M.setup(config)
   set_highlight("Italic", { italic = true })
   set_highlight("Keyword", { fg = palette.red })
   set_highlight("Label", { fg = palette.fg_bright })
-  set_highlight("Number", { fg = palette.violet })
+  set_highlight("Number", { fg = palette.blue })
   set_highlight("Operator", { fg = palette.red })
   set_highlight("PreProc", { fg = palette.green })
   set_highlight("Repeat", { fg = palette.red })
@@ -143,12 +164,12 @@ function M.setup(config)
   set_highlight("Structure", { fg = palette.fg_bright })
   set_highlight("Tag", { fg = palette.fg })
   set_highlight("Todo", { fg = palette.orange, bold = true })
-  set_highlight("Type", { fg = palette.green })
-  set_highlight("Typedef", { fg = palette.fg_bright })
+  set_highlight("Type", { fg = palette.yellow })
+  set_highlight("Typedef", { fg = palette.yellow })
   set_highlight("Underline", { underline = true })
   set_highlight("WarningMsg", { fg = palette.orange })
   set_highlight("markdownBlockquote", { fg = palette.gray })
-  set_highlight("markdownCode", { fg = palette.violet })
+  set_highlight("markdownCode", { fg = palette.fg_bright })
   set_highlight("markdownH1", { fg = palette.fg_bright, bold = true })
   set_highlight("markdownLinkText", { fg = palette.blue, underline = true })
   set_highlight("markdownListMarker", { fg = palette.green })
@@ -197,7 +218,7 @@ function M.setup(config)
   set_highlight("MsgArea", { fg = palette.fg, bg = palette.bg })
   set_highlight("MsgSeparator", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("Question", { fg = palette.blue })
-  set_highlight("StatusLine", { fg = palette.bg, bg = palette.yellow })
+  set_highlight("StatusLine", { fg = palette.bg, bg = palette.orange })
   set_highlight("StatusLineNC", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("WildMenu", { fg = palette.fg_bright, bg = palette.orange })
   set_highlight("WinBar", { fg = palette.fg, bg = palette.bg })
@@ -281,7 +302,7 @@ function M.setup(config)
 
   -- LSP
   set_highlight("LspCodeLens", { fg = palette.fg_gutter, italic = true })
-  set_highlight("LspInlayHint", { fg = palette.fg_gutter, bg = palette.bg_highlight, italic = true })
+  set_highlight("LspInlayHint", { fg = palette.violet, bg = palette.bg_highlight, italic = true })
   set_highlight("LspReferenceRead", { fg = palette.orange })
   set_highlight("LspReferenceText", { fg = palette.orange })
   set_highlight("LspReferenceWrite", { fg = palette.orange })
@@ -330,7 +351,7 @@ function M.setup(config)
   link_highlight("LspDiagnosticsUnderlineWarning", "DiagnosticUnderlineWarn")
 
   -- Navigation
-  set_highlight("Directory", { fg = palette.orange })
+  set_highlight("Directory", { fg = palette.blue })
 
   -- Search
   set_highlight("CurSearch", { fg = palette.bg, bg = palette.orange, bold = true })
@@ -352,7 +373,7 @@ function M.setup(config)
   set_highlight("Added", { fg = palette.green })
   set_highlight("Changed", { fg = palette.orange })
   set_highlight("DiffAdd", { fg = palette.green, bg = palette.bg_highlight })
-  set_highlight("DiffChange", { fg = palette.orange, bg = palette.bg_highlight })
+  set_highlight("DiffChange", { fg = palette.blue, bg = palette.bg_highlight })
   set_highlight("DiffDelete", { fg = palette.red, bg = palette.bg_highlight })
   set_highlight("DiffText", { fg = palette.blue, bg = palette.bg_highlight, bold = true })
   set_highlight("Removed", { fg = palette.red })
