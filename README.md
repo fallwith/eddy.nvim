@@ -3,7 +3,8 @@
 A muted, low-contrast Neovim theme inspired by rivers around the world.
 Includes [extras](./extras).
 
-<img width="2475" height="1382" alt="image" src="https://github.com/user-attachments/assets/f456f1b9-2ef4-424a-88f9-5edf8a8348d8" />
+<img width="2481" height="1374" alt="eddy-nvim-screenshot" src="https://github.com/user-attachments/assets/6a9771a2-67d5-4092-a405-4ce3933789c1" />
+
 
 # Installation
 
