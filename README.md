@@ -15,7 +15,7 @@ A muted, low-contrast Neovim theme inspired by rivers around the world.
 
 ```lua
 {
-  "m-mead/eddy",
+  "m-mead/eddy.nvim",
   priority = 1000,
   config = function()
     vim.cmd.colorscheme("eddy")
