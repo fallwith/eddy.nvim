@@ -109,16 +109,16 @@
   <key>Bold Color</key>
   <dict>
     <key>Color Space</key><string>sRGB</string>
-    <key>Blue Component</key><real>0.850980</real>
-    <key>Green Component</key><real>0.905882</real>
-    <key>Red Component</key><real>0.929412</real>
+    <key>Blue Component</key><real>0.835294</real>
+    <key>Green Component</key><real>0.890196</real>
+    <key>Red Component</key><real>0.909804</real>
   </dict>
   <key>Cursor Color</key>
   <dict>
     <key>Color Space</key><string>sRGB</string>
-    <key>Blue Component</key><real>0.850980</real>
-    <key>Green Component</key><real>0.905882</real>
-    <key>Red Component</key><real>0.929412</real>
+    <key>Blue Component</key><real>0.835294</real>
+    <key>Green Component</key><real>0.890196</real>
+    <key>Red Component</key><real>0.909804</real>
   </dict>
   <key>Cursor Text Color</key>
   <dict>
@@ -136,6 +136,7 @@
   </dict>
   <key>Link Color</key>
   <dict>
+    <key>Color Space</key><string>sRGB</string>
     <key>Blue Component</key><real>0.878431</real>
     <key>Green Component</key><real>0.796078</real>
     <key>Red Component</key><real>0.678431</real>

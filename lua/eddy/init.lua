@@ -4,35 +4,16 @@ local M = {
     oxbow = {
       background = "dark",
       palette    = {
-        -- base surfaces - desaturated pine green
-        bg           = "#1a2821",
-
-        -- elevated surfaces - lighter green
-        bg_highlight = "#22332b",
-
-        -- primary text - warm parchment
-        fg           = "#e8e3d5",
-
-        -- ui - muted olive gray
-        fg_gutter    = "#82937f",
-
-        -- comments - warm grey
-        gray         = "#a79f95",
-
-        -- informational values - soft powder blue
-        blue         = "#adcbe0",
-
-        -- strings, declarative content, positive state - soft sage green
-        green        = "#c8dfb8",
-
-        -- active attention and selections - muted amber
-        orange       = "#d69f73",
-
-        -- control flow, operators, and errors - muted clay red
-        red          = "#cc9488",
-
-        -- types and search state - muted sand gold
-        yellow       = "#d8c39a",
+        bg           = "#1a2821", -- background surface
+        bg_highlight = "#22332b", -- elevated background surface
+        fg           = "#e8e3d5", -- primary text
+        fg_gutter    = "#82937f", -- subdued UI
+        gray         = "#a79f95", -- comments, subdued prose
+        blue         = "#adcbe0", -- info, hints, literals
+        green        = "#c8dfb8", -- success, strings
+        orange       = "#d69f73", -- warnings, attention
+        red          = "#cc9488", -- errors, control flow
+        yellow       = "#d8c39a", -- types, declarations
       },
     },
   }
@@ -92,7 +73,7 @@ function M.setup(config)
   set_highlight("LineNr", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("LineNrAbove", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("LineNrBelow", { fg = palette.fg_gutter, bg = palette.bg })
-  set_highlight("MatchParen", { fg = palette.orange, bold = true })
+  set_highlight("MatchParen", { fg = palette.blue, bold = true, underline = true })
   set_highlight("NonText", { fg = palette.fg_gutter })
   set_highlight("Normal", { fg = palette.fg, bg = palette.bg })
   set_highlight("NormalFloat", { fg = palette.fg, bg = palette.bg_highlight })
@@ -101,13 +82,13 @@ function M.setup(config)
   set_highlight("Pmenu", { fg = palette.fg, bg = palette.bg_highlight })
   set_highlight("PmenuBorder", { fg = palette.fg_gutter, bg = palette.bg_highlight })
   set_highlight("PmenuExtra", { fg = palette.fg, bg = palette.bg_highlight })
-  set_highlight("PmenuExtraSel", { fg = palette.fg, bg = palette.orange })
+  set_highlight("PmenuExtraSel", { fg = palette.fg, bg = palette.fg_gutter })
   set_highlight("PmenuKind", { fg = palette.fg, bg = palette.bg_highlight })
-  set_highlight("PmenuKindSel", { fg = palette.fg, bg = palette.orange })
+  set_highlight("PmenuKindSel", { fg = palette.fg, bg = palette.fg_gutter })
   set_highlight("PmenuMatch", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
-  set_highlight("PmenuMatchSel", { fg = palette.fg, bg = palette.orange, bold = true })
+  set_highlight("PmenuMatchSel", { fg = palette.fg, bg = palette.fg_gutter, bold = true })
   set_highlight("PmenuSbar", { bg = palette.bg_highlight })
-  set_highlight("PmenuSel", { fg = palette.fg, bg = palette.orange })
+  set_highlight("PmenuSel", { fg = palette.fg, bg = palette.fg_gutter })
   set_highlight("PmenuShadow", { bg = palette.bg_highlight, blend = 80 })
   set_highlight("PmenuShadowThrough", { bg = palette.bg, blend = 100 })
   set_highlight("PmenuThumb", { bg = palette.fg_gutter })
@@ -152,8 +133,8 @@ function M.setup(config)
   set_highlight("Operator", { fg = palette.red })
   set_highlight("PreProc", { fg = palette.red })
   set_highlight("Repeat", { fg = palette.red })
-  set_highlight("Special", { fg = palette.orange })
-  set_highlight("SpecialChar", { fg = palette.orange })
+  set_highlight("Special", { fg = palette.fg })
+  set_highlight("SpecialChar", { fg = palette.fg })
   set_highlight("SpecialComment", { fg = palette.gray })
   set_highlight("Statement", { fg = palette.red })
   set_highlight("StorageClass", { fg = palette.fg })
@@ -175,22 +156,22 @@ function M.setup(config)
   -- Diagnostic
   set_highlight("DiagnosticDeprecated", { fg = palette.fg_gutter, strikethrough = true })
   set_highlight("DiagnosticError", { fg = palette.red })
-  set_highlight("DiagnosticHint", { fg = palette.gray })
+  set_highlight("DiagnosticHint", { fg = palette.blue, italic = true })
   set_highlight("DiagnosticInfo", { fg = palette.blue })
   set_highlight("DiagnosticLineNrError", { fg = palette.red, bg = palette.bg })
-  set_highlight("DiagnosticLineNrHint", { fg = palette.gray, bg = palette.bg })
+  set_highlight("DiagnosticLineNrHint", { fg = palette.blue, bg = palette.bg })
   set_highlight("DiagnosticLineNrInfo", { fg = palette.blue, bg = palette.bg })
   set_highlight("DiagnosticLineNrOk", { fg = palette.green, bg = palette.bg })
   set_highlight("DiagnosticLineNrWarn", { fg = palette.orange, bg = palette.bg })
   set_highlight("DiagnosticOk", { fg = palette.green })
   set_highlight("DiagnosticUnderlineError", { sp = palette.red, undercurl = true })
-  set_highlight("DiagnosticUnderlineHint", { sp = palette.gray, undercurl = true })
+  set_highlight("DiagnosticUnderlineHint", { sp = palette.blue, undercurl = true })
   set_highlight("DiagnosticUnderlineInfo", { sp = palette.blue, undercurl = true })
   set_highlight("DiagnosticUnderlineOk", { sp = palette.green, undercurl = true })
   set_highlight("DiagnosticUnderlineWarn", { sp = palette.orange, undercurl = true })
   set_highlight("DiagnosticUnnecessary", { fg = palette.fg_gutter, italic = true })
   set_highlight("DiagnosticVirtualTextError", { fg = palette.red, bg = palette.bg_highlight })
-  set_highlight("DiagnosticVirtualTextHint", { fg = palette.gray, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualTextHint", { fg = palette.blue, bg = palette.bg_highlight, italic = true })
   set_highlight("DiagnosticVirtualTextInfo", { fg = palette.blue, bg = palette.bg_highlight })
   set_highlight("DiagnosticVirtualTextOk", { fg = palette.green, bg = palette.bg_highlight })
   set_highlight("DiagnosticVirtualTextWarn", { fg = palette.orange, bg = palette.bg_highlight })
@@ -206,11 +187,11 @@ function M.setup(config)
   link_highlight("DiagnosticSignInfo", "DiagnosticInfo")
   link_highlight("DiagnosticSignOk", "DiagnosticOk")
   link_highlight("DiagnosticSignWarn", "DiagnosticWarn")
-  link_highlight("DiagnosticVirtualLinesError", "DiagnosticError")
-  link_highlight("DiagnosticVirtualLinesHint", "DiagnosticHint")
-  link_highlight("DiagnosticVirtualLinesInfo", "DiagnosticInfo")
-  link_highlight("DiagnosticVirtualLinesOk", "DiagnosticOk")
-  link_highlight("DiagnosticVirtualLinesWarn", "DiagnosticWarn")
+  set_highlight("DiagnosticVirtualLinesError", { fg = palette.red, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualLinesHint", { fg = palette.blue, bg = palette.bg_highlight, italic = true })
+  set_highlight("DiagnosticVirtualLinesInfo", { fg = palette.blue, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualLinesOk", { fg = palette.green, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualLinesWarn", { fg = palette.orange, bg = palette.bg_highlight })
 
   -- StatusLine, WinBar, etc.
   set_highlight("EndOfBuffer", { fg = palette.bg, bg = palette.bg })
@@ -220,9 +201,9 @@ function M.setup(config)
   set_highlight("MsgArea", { fg = palette.fg, bg = palette.bg })
   set_highlight("MsgSeparator", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("Question", { fg = palette.blue })
-  set_highlight("StatusLine", { fg = palette.bg, bg = palette.orange })
+  set_highlight("StatusLine", { fg = palette.fg, bg = palette.bg_highlight })
   set_highlight("StatusLineNC", { fg = palette.fg_gutter, bg = palette.bg })
-  set_highlight("WildMenu", { fg = palette.fg, bg = palette.orange })
+  set_highlight("WildMenu", { fg = palette.fg, bg = palette.bg_highlight })
   set_highlight("WinBar", { fg = palette.fg, bg = palette.bg })
   set_highlight("WinBarNC", { fg = palette.fg_gutter, bg = palette.bg })
 
@@ -273,7 +254,7 @@ function M.setup(config)
   link_highlight("@markup.link.label", "markdownLinkText")
   link_highlight("@markup.link.url", "markdownUrl")
   link_highlight("@markup.list", "markdownListMarker")
-  link_highlight("@markup.list.checked", "SpecialChar")
+  link_highlight("@markup.list.checked", "markdownListMarker")
   link_highlight("@markup.list.unchecked", "markdownListMarker")
   link_highlight("@markup.quote", "markdownBlockquote")
   link_highlight("@markup.raw", "markdownCode")
@@ -320,7 +301,7 @@ function M.setup(config)
   -- LSP
   set_highlight("LspCodeLens", { fg = palette.fg_gutter, italic = true })
   set_highlight("LspInlayHint", { fg = palette.fg_gutter, bg = palette.bg_highlight, italic = true })
-  set_highlight("LspSignatureActiveParameter", { fg = palette.orange })
+  set_highlight("LspSignatureActiveParameter", { fg = palette.blue, underline = true })
 
 
   link_highlight("@lsp.mod.deprecated", "DiagnosticDeprecated")
@@ -352,22 +333,23 @@ function M.setup(config)
   link_highlight("@lsp.typemod.method.defaultLibrary", "@function.builtin")
   link_highlight("@lsp.typemod.operator.injected", "@operator")
   link_highlight("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
-  link_highlight("LspReferenceRead", "Visual")
-  link_highlight("LspReferenceText", "Visual")
-  link_highlight("LspReferenceWrite", "Visual")
+  -- Keep symbol references distinct from manual selections.
+  set_highlight("LspReferenceRead", { bg = palette.bg_highlight, underline = true })
+  set_highlight("LspReferenceText", { bg = palette.bg_highlight, underline = true })
+  set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true })
   -- Navigation
   set_highlight("Directory", { fg = palette.blue })
 
-  -- Search
-  set_highlight("CurSearch", { fg = palette.bg, bg = palette.orange, bold = true })
-  set_highlight("IncSearch", { fg = palette.bg, bg = palette.yellow, underline = true })
-  set_highlight("Search", { fg = palette.bg, bg = palette.yellow })
-  set_highlight("Substitute", { fg = palette.bg, bg = palette.yellow, bold = true })
+  -- Search is an interaction state, not a warning state.
+  set_highlight("CurSearch", { fg = palette.bg, bg = palette.fg, bold = true })
+  set_highlight("IncSearch", { fg = palette.bg, bg = palette.blue, underline = true })
+  set_highlight("Search", { fg = palette.bg, bg = palette.blue })
+  set_highlight("Substitute", { fg = palette.bg, bg = palette.fg, bold = true })
 
   -- Tab
   set_highlight("TabLine", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("TabLineFill", { fg = palette.fg_gutter, bg = palette.bg })
-  set_highlight("TabLineSel", { fg = palette.bg, bg = palette.yellow, bold = true })
+  set_highlight("TabLineSel", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
 
   -- Window
   set_highlight("QuickFixLine", { bg = palette.bg_highlight })
@@ -378,9 +360,9 @@ function M.setup(config)
   set_highlight("Added", { fg = palette.green })
   set_highlight("Changed", { fg = palette.orange })
   set_highlight("DiffAdd", { fg = palette.green, bg = palette.bg_highlight })
-  set_highlight("DiffChange", { fg = palette.blue, bg = palette.bg_highlight })
+  set_highlight("DiffChange", { fg = palette.orange, bg = palette.bg_highlight })
   set_highlight("DiffDelete", { fg = palette.red, bg = palette.bg_highlight })
-  set_highlight("DiffText", { fg = palette.blue, bg = palette.bg_highlight, bold = true })
+  set_highlight("DiffText", { fg = palette.orange, bg = palette.bg_highlight, bold = true })
   set_highlight("Removed", { fg = palette.red })
 end
 
