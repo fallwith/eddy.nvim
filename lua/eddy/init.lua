@@ -41,13 +41,12 @@ end
 ---
 --- @param config table|nil Theme config table.
 function M.setup(config)
-  if not config then
-    config = { theme = "oxbow" }
-  end
+  config = config or {}
+  config.theme = config.theme or "oxbow"
 
   local theme = M.theme[config.theme]
   if not theme then
-    error("invalid theme: " .. config.theme)
+    error("invalid theme: " .. tostring(config.theme))
   end
 
   local palette = theme.palette
@@ -305,7 +304,6 @@ function M.setup(config)
   set_highlight("LspInlayHint", { fg = palette.fg_gutter, bg = palette.bg_highlight, italic = true })
   set_highlight("LspSignatureActiveParameter", { fg = palette.blue, underline = true })
 
-
   link_highlight("@lsp.mod.deprecated", "DiagnosticDeprecated")
   link_highlight("@lsp.type.class", "@type")
   link_highlight("@lsp.type.comment", "@comment")
@@ -335,10 +333,10 @@ function M.setup(config)
   link_highlight("@lsp.typemod.method.defaultLibrary", "@function.builtin")
   link_highlight("@lsp.typemod.operator.injected", "@operator")
   link_highlight("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
-  -- Keep symbol references distinct from manual selections.
   set_highlight("LspReferenceRead", { bg = palette.bg_highlight, underline = true })
   set_highlight("LspReferenceText", { bg = palette.bg_highlight, underline = true })
   set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true })
+
   -- Navigation
   set_highlight("Directory", { fg = palette.blue })
 
@@ -366,6 +364,40 @@ function M.setup(config)
   set_highlight("DiffDelete", { fg = palette.red, bg = palette.bg_highlight })
   set_highlight("DiffText", { fg = palette.orange, bg = palette.bg_highlight, bold = true })
   set_highlight("Removed", { fg = palette.red })
+
+  -- MiniPick
+  link_highlight("MiniPickBorder", "FloatBorder")
+  link_highlight("MiniPickBorderBusy", "FloatTitle")
+  link_highlight("MiniPickBorderText", "FloatTitle")
+  link_highlight("MiniPickCursor", "Cursor")
+  link_highlight("MiniPickHeader", "Title")
+  link_highlight("MiniPickIconDirectory", "Directory")
+  link_highlight("MiniPickIconFile", "NormalFloat")
+  link_highlight("MiniPickMatchCurrent", "Visual")
+  link_highlight("MiniPickMatchMarked", "Visual")
+  link_highlight("MiniPickMatchRanges", "PmenuMatch")
+  link_highlight("MiniPickNormal", "NormalFloat")
+  link_highlight("MiniPickPreviewLine", "QuickFixLine")
+  link_highlight("MiniPickPreviewRegion", "Visual")
+  link_highlight("MiniPickPrompt", "NormalFloat")
+  link_highlight("MiniPickPromptCaret", "FloatTitle")
+  link_highlight("MiniPickPromptPrefix", "FloatTitle")
+
+  -- MiniDiff
+  link_highlight("MiniDiffOverAdd", "DiffAdd")
+  link_highlight("MiniDiffOverChange", "DiffChange")
+  link_highlight("MiniDiffOverChangeBuf", "DiffText")
+  link_highlight("MiniDiffOverContext", "NormalFloat")
+  link_highlight("MiniDiffOverContextBuf", "NormalFloat")
+  link_highlight("MiniDiffOverDelete", "DiffDelete")
+  link_highlight("MiniDiffSignAdd", "Added")
+  link_highlight("MiniDiffSignChange", "Changed")
+  link_highlight("MiniDiffSignDelete", "Removed")
+
+  -- MiniCompletion
+  link_highlight("MiniCompletionActiveParameter", "LspSignatureActiveParameter")
+  link_highlight("MiniCompletionDeprecated", "DiagnosticDeprecated")
+  link_highlight("MiniCompletionInfoBorderOutdated", "FloatBorder")
 end
 
 return M

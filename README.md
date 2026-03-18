@@ -8,6 +8,10 @@ Eddy's core palette is intentionally small.
 # Features
 
 - Treesitter and LSP support
+- Plugin support
+  - [mini.completion](https://github.com/nvim-mini/mini.completion)
+  - [mini.diff](https://github.com/nvim-mini/mini.diff)
+  - [mini.pick](https://github.com/nvim-mini/mini.pick)
 - [Extras](./extras) for other applications
 
 # Installation
@@ -26,7 +30,7 @@ Eddy's core palette is intentionally small.
 
 # Configuration
 
-`oxbow` is the default flavor.
+`oxbow` is the default theme.
 
 ```lua
 require("eddy").setup({
