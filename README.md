@@ -3,8 +3,7 @@
 A muted Neovim theme inspired by rivers around the world.
 Eddy's core palette is intentionally small.
 
-<img width="2492" height="1382" alt="image" src="https://github.com/user-attachments/assets/c9e5554b-b5e8-4728-b652-c1c16b1323fb" />
-
+<img width="2492" height="1382" alt="image" src="https://github.com/user-attachments/assets/a39baa83-c5c9-4a5c-a442-fdb83cc713e0" />
 
 # Features
 
