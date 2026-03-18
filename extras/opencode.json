@@ -10,7 +10,7 @@
     "green": "#c8dfb8",
     "orange": "#d69f73",
     "red": "#cc9488",
-    "mauve": "#c2a3b0",
+    "orchid": "#b78fa8",
     "yellow": "#d8c39a",
     "diff_added_bg": "#22332b",
     "diff_removed_bg": "#22332b"
@@ -185,8 +185,8 @@
       "light": "comment"
     },
     "syntaxKeyword": {
-      "dark": "mauve",
-      "light": "mauve"
+      "dark": "orchid",
+      "light": "orchid"
     },
     "syntaxFunction": {
       "dark": "fg",
@@ -209,8 +209,8 @@
       "light": "yellow"
     },
     "syntaxOperator": {
-      "dark": "mauve",
-      "light": "mauve"
+      "dark": "orchid",
+      "light": "orchid"
     },
     "syntaxPunctuation": {
       "dark": "fg",
