@@ -1,9 +1,9 @@
 palette = 0=#1a2821
-palette = 1=#cc9488
+palette = 1=#c07c72
 palette = 2=#c8dfb8
 palette = 3=#d8c39a
 palette = 4=#adcbe0
-palette = 5=#b78fa8
+palette = 5=#d19a8b
 palette = 6=#b7d9d2
 palette = 7=#e8e3d5
 palette = 8=#82937f
@@ -11,7 +11,7 @@ palette = 9=#ddb0a7
 palette = 10=#d8e8cd
 palette = 11=#e3d2b1
 palette = 12=#c0d7e8
-palette = 13=#cbafc0
+palette = 13=#e5baa3
 palette = 14=#c8e4de
 palette = 15=#f3eee2
 background = #1a2821

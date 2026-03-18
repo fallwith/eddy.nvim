@@ -9,8 +9,8 @@
     "blue": "#adcbe0",
     "green": "#c8dfb8",
     "orange": "#d69f73",
-    "red": "#cc9488",
-    "orchid": "#b78fa8",
+    "red": "#c07c72",
+    "clay": "#d19a8b",
     "yellow": "#d8c39a",
     "diff_added_bg": "#22332b",
     "diff_removed_bg": "#22332b"
@@ -185,8 +185,8 @@
       "light": "comment"
     },
     "syntaxKeyword": {
-      "dark": "orchid",
-      "light": "orchid"
+      "dark": "clay",
+      "light": "clay"
     },
     "syntaxFunction": {
       "dark": "fg",
@@ -209,8 +209,8 @@
       "light": "yellow"
     },
     "syntaxOperator": {
-      "dark": "orchid",
-      "light": "orchid"
+      "dark": "clay",
+      "light": "clay"
     },
     "syntaxPunctuation": {
       "dark": "fg",
