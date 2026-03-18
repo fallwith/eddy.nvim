@@ -14,7 +14,7 @@ local M = {
         green        = "#c8dfb8", -- success, strings
         orange       = "#d69f73", -- warnings, attention
         red          = "#c07c72", -- errors, removals
-        clay         = "#d19a8b", -- keywords, control flow
+        clay         = "#cc9787", -- keywords, control flow
         yellow       = "#d8c39a", -- types, declarations
       },
     },
