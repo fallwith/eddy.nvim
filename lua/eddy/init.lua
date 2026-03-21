@@ -99,6 +99,7 @@ function M.setup(config)
   set_highlight("SpellCap", { sp = palette.orange, undercurl = true })
   set_highlight("SpellLocal", { sp = palette.blue, undercurl = true })
   set_highlight("SpellRare", { sp = palette.blue, undercurl = true })
+  set_highlight("TermCursor", { fg = palette.bg, bg = palette.fg })
   set_highlight("TermCursorNC", { bg = palette.fg_gutter })
   set_highlight("VertSplit", { fg = palette.fg_gutter })
   set_highlight("Visual", { fg = palette.fg, bg = palette.fg_gutter })
@@ -108,6 +109,10 @@ function M.setup(config)
   set_highlight("healthSuccess", { fg = palette.green, bg = palette.bg_highlight })
   set_highlight("healthWarning", { fg = palette.orange, bg = palette.bg_highlight })
   set_highlight("iCursor", { fg = palette.bg, bg = palette.fg })
+
+  link_highlight("ComplMatchIns", "PmenuMatchSel")
+  link_highlight("CursorIM", "Cursor")
+  link_highlight("lCursor", "Cursor")
 
   -- Language
   set_highlight("Annotation", { fg = palette.gray })
@@ -204,6 +209,11 @@ function M.setup(config)
   set_highlight("DiagnosticUnderlineOk", { sp = palette.green, undercurl = true })
   set_highlight("DiagnosticUnderlineWarn", { sp = palette.orange, undercurl = true })
   set_highlight("DiagnosticUnnecessary", { fg = palette.fg_gutter, italic = true })
+  set_highlight("DiagnosticVirtualLinesError", { fg = palette.red, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualLinesHint", { fg = palette.blue, bg = palette.bg_highlight, italic = true })
+  set_highlight("DiagnosticVirtualLinesInfo", { fg = palette.blue, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualLinesOk", { fg = palette.green, bg = palette.bg_highlight })
+  set_highlight("DiagnosticVirtualLinesWarn", { fg = palette.orange, bg = palette.bg_highlight })
   set_highlight("DiagnosticVirtualTextError", { fg = palette.red, bg = palette.bg_highlight })
   set_highlight("DiagnosticVirtualTextHint", { fg = palette.blue, bg = palette.bg_highlight, italic = true })
   set_highlight("DiagnosticVirtualTextInfo", { fg = palette.blue, bg = palette.bg_highlight })
@@ -221,11 +231,6 @@ function M.setup(config)
   link_highlight("DiagnosticSignInfo", "DiagnosticInfo")
   link_highlight("DiagnosticSignOk", "DiagnosticOk")
   link_highlight("DiagnosticSignWarn", "DiagnosticWarn")
-  set_highlight("DiagnosticVirtualLinesError", { fg = palette.red, bg = palette.bg_highlight })
-  set_highlight("DiagnosticVirtualLinesHint", { fg = palette.blue, bg = palette.bg_highlight, italic = true })
-  set_highlight("DiagnosticVirtualLinesInfo", { fg = palette.blue, bg = palette.bg_highlight })
-  set_highlight("DiagnosticVirtualLinesOk", { fg = palette.green, bg = palette.bg_highlight })
-  set_highlight("DiagnosticVirtualLinesWarn", { fg = palette.orange, bg = palette.bg_highlight })
 
   -- StatusLine, WinBar, etc.
   set_highlight("EndOfBuffer", { fg = palette.bg, bg = palette.bg })
@@ -341,7 +346,6 @@ function M.setup(config)
   set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true })
   set_highlight("LspSignatureActiveParameter", { fg = palette.blue, underline = true })
 
-
   link_highlight("@lsp.mod.deprecated", "DiagnosticDeprecated")
   link_highlight("@lsp.type.class", "@type")
   link_highlight("@lsp.type.comment", "@comment")
@@ -388,6 +392,7 @@ function M.setup(config)
 
   -- Window
   set_highlight("QuickFixLine", { bg = palette.bg_highlight })
+  set_highlight("SnippetTabstop", { bg = palette.bg_highlight, underline = true })
   set_highlight("Whitespace", { fg = palette.fg_gutter })
 
   -- Diff
