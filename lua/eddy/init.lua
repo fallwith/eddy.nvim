@@ -152,8 +152,8 @@ function M.setup(config)
   -- Markdown
   set_highlight("markdownBlockquote", { fg = palette.gray, bg = palette.bg_highlight, italic = true })
   set_highlight("markdownBoldItalic", { bold = true, italic = true })
-  set_highlight("markdownCode", { fg = palette.fg, bg = palette.bg_highlight })
-  set_highlight("markdownCodeBlock", { fg = palette.fg, bg = palette.bg_highlight })
+  set_highlight("markdownCode", { bg = palette.bg_highlight })
+  set_highlight("markdownCodeBlock", { bg = palette.bg_highlight })
   set_highlight("markdownCodeDelimiter", { fg = palette.fg_gutter })
   set_highlight("markdownH2", { fg = palette.clay, bold = true })
   set_highlight("markdownH3", { fg = palette.blue, bold = true })
@@ -336,7 +336,11 @@ function M.setup(config)
   -- LSP
   set_highlight("LspCodeLens", { fg = palette.fg_gutter, italic = true })
   set_highlight("LspInlayHint", { fg = palette.fg_gutter, bg = palette.bg_highlight, italic = true })
+  set_highlight("LspReferenceRead", { bg = palette.bg_highlight, underline = true })
+  set_highlight("LspReferenceText", { bg = palette.bg_highlight, underline = true })
+  set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true })
   set_highlight("LspSignatureActiveParameter", { fg = palette.blue, underline = true })
+
 
   link_highlight("@lsp.mod.deprecated", "DiagnosticDeprecated")
   link_highlight("@lsp.type.class", "@type")
@@ -367,9 +371,6 @@ function M.setup(config)
   link_highlight("@lsp.typemod.method.defaultLibrary", "@function.builtin")
   link_highlight("@lsp.typemod.operator.injected", "@operator")
   link_highlight("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
-  set_highlight("LspReferenceRead", { bg = palette.bg_highlight, underline = true })
-  set_highlight("LspReferenceText", { bg = palette.bg_highlight, underline = true })
-  set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true })
 
   -- Navigation
   set_highlight("Directory", { fg = palette.blue })
