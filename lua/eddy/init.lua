@@ -406,7 +406,7 @@ function M.setup(config)
   link_highlight("@lsp.typemod.variable.defaultLibrary", "@variable.builtin")
   link_highlight("@lsp.typemod.variable.global", "@variable")
   link_highlight("@lsp.typemod.variable.injected", "@variable")
-  link_highlight("@lsp.typemod.variable.readonly", "@constant")
+  link_highlight("@lsp.typemod.variable.readonly", "@variable")
   link_highlight("@lsp.typemod.variable.static", "@constant")
 
   -- Navigation
