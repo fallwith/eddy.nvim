@@ -153,6 +153,14 @@ function M.setup(config)
   set_highlight("Type", { fg = palette.yellow })
   set_highlight("Typedef", { fg = palette.yellow })
   set_highlight("Underline", { underline = true })
+
+  -- Messages
+  set_highlight("ErrorMsg", { fg = palette.fg, bg = palette.red })
+  set_highlight("ModeMsg", { fg = palette.fg, bold = true })
+  set_highlight("MoreMsg", { fg = palette.blue })
+  set_highlight("MsgArea", { fg = palette.fg, bg = palette.bg })
+  set_highlight("MsgSeparator", { fg = palette.fg_gutter, bg = palette.bg })
+  set_highlight("OkMsg", { fg = palette.green })
   set_highlight("WarningMsg", { fg = palette.orange })
 
   -- Markdown
@@ -235,11 +243,6 @@ function M.setup(config)
 
   -- StatusLine, WinBar, etc.
   set_highlight("EndOfBuffer", { fg = palette.bg, bg = palette.bg })
-  set_highlight("ErrorMsg", { fg = palette.fg, bg = palette.red })
-  set_highlight("ModeMsg", { fg = palette.fg, bold = true })
-  set_highlight("MoreMsg", { fg = palette.blue })
-  set_highlight("MsgArea", { fg = palette.fg, bg = palette.bg })
-  set_highlight("MsgSeparator", { fg = palette.fg_gutter, bg = palette.bg })
   set_highlight("Question", { fg = palette.blue })
   set_highlight("StatusLine", { fg = palette.fg, bg = palette.bg_highlight })
   set_highlight("StatusLineNC", { fg = palette.fg_gutter, bg = palette.bg })
@@ -430,6 +433,7 @@ function M.setup(config)
 
   -- Snippet
   set_highlight("SnippetTabstop", { bg = palette.bg_highlight, underline = true })
+  set_highlight("SnippetTabstopActive", { fg = palette.blue, underline = true })
 
   -- Diff
   set_highlight("Added", { fg = palette.green })
@@ -439,6 +443,13 @@ function M.setup(config)
   set_highlight("DiffDelete", { fg = palette.red, bg = palette.bg_highlight })
   set_highlight("DiffText", { fg = palette.orange, bg = palette.bg_highlight, bold = true })
   set_highlight("Removed", { fg = palette.red })
+
+  link_highlight("DiffTextAdd", "DiffAdd")
+
+  -- Stdin/Stdout
+  set_highlight("StdoutMsg", { fg = palette.fg})
+
+  link_highlight("StderrMsg", "ErrorMsg")
 
   -- MiniPick
   link_highlight("MiniPickBorder", "FloatBorder")
