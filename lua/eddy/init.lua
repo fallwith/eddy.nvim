@@ -5,9 +5,9 @@ local M = {
       background = "dark",
       palette    = {
         bg           = "#1a2821", -- background surface
-        bg_highlight = "#22332b", -- elevated background surface, current surface
+        bg_highlight = "#22332b", -- elevated background surface
         fg           = "#e8e3d5", -- primary text
-        fg_gutter    = "#82937f", -- subdued UI, explicit selection
+        fg_gutter    = "#82937f", -- subdued UI
         gray         = "#a79f95", -- comments, subdued prose
         blue         = "#adcbe0", -- info, hints, literals
         green        = "#c8dfb8", -- success, strings
@@ -82,13 +82,13 @@ function M.setup(config)
   set_highlight("Pmenu", { fg = palette.fg, bg = palette.bg_highlight })
   set_highlight("PmenuBorder", { fg = palette.fg_gutter, bg = palette.bg_highlight })
   set_highlight("PmenuExtra", { fg = palette.fg, bg = palette.bg_highlight })
-  set_highlight("PmenuExtraSel", { fg = palette.fg, bg = palette.fg_gutter })
+  set_highlight("PmenuExtraSel", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
   set_highlight("PmenuKind", { fg = palette.fg, bg = palette.bg_highlight })
-  set_highlight("PmenuKindSel", { fg = palette.fg, bg = palette.fg_gutter })
+  set_highlight("PmenuKindSel", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
   set_highlight("PmenuMatch", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
-  set_highlight("PmenuMatchSel", { fg = palette.fg, bg = palette.fg_gutter, bold = true })
+  set_highlight("PmenuMatchSel", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
   set_highlight("PmenuSbar", { bg = palette.bg_highlight })
-  set_highlight("PmenuSel", { fg = palette.fg, bg = palette.fg_gutter })
+  set_highlight("PmenuSel", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
   set_highlight("PmenuShadow", { bg = palette.bg_highlight, blend = 80 })
   set_highlight("PmenuShadowThrough", { bg = palette.bg, blend = 100 })
   set_highlight("PmenuThumb", { bg = palette.fg_gutter })
@@ -245,7 +245,7 @@ function M.setup(config)
   set_highlight("Question", { fg = palette.blue })
   set_highlight("StatusLine", { fg = palette.fg, bg = palette.bg_highlight })
   set_highlight("StatusLineNC", { fg = palette.fg_gutter, bg = palette.bg })
-  set_highlight("WildMenu", { fg = palette.fg, bg = palette.fg_gutter, bold = true })
+  set_highlight("WildMenu", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
   set_highlight("WinBar", { fg = palette.fg, bg = palette.bg })
   set_highlight("WinBarNC", { fg = palette.fg_gutter, bg = palette.bg })
 
@@ -426,7 +426,7 @@ function M.setup(config)
   set_highlight("TabLineSel", { fg = palette.fg, bg = palette.bg_highlight, bold = true })
 
   -- Quickfix
-  set_highlight("QuickFixLine", { fg = palette.fg, bg = palette.fg_gutter })
+  set_highlight("QuickFixLine", { bg = palette.bg_highlight })
   set_highlight("qfFileName", { fg = palette.blue })
   set_highlight("qfLineNr", { fg = palette.fg_gutter })
 
@@ -458,7 +458,7 @@ function M.setup(config)
   link_highlight("MiniPickHeader", "Title")
   link_highlight("MiniPickIconDirectory", "Directory")
   link_highlight("MiniPickIconFile", "NormalFloat")
-  link_highlight("MiniPickMatchCurrent", "Visual")
+  link_highlight("MiniPickMatchCurrent", "PmenuSel")
   link_highlight("MiniPickMatchMarked", "Visual")
   link_highlight("MiniPickMatchRanges", "PmenuMatch")
   link_highlight("MiniPickNormal", "NormalFloat")
