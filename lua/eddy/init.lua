@@ -3,7 +3,6 @@ local M = {
   theme = {
     oxbow = {
       background = "dark",
-
       palette    = {
         bg           = "#1a2821", -- background surface
         bg_highlight = "#22332b", -- elevated background surface
@@ -447,7 +446,7 @@ function M.setup(config)
   link_highlight("DiffTextAdd", "DiffAdd")
 
   -- Stdin/Stdout
-  set_highlight("StdoutMsg", { fg = palette.fg})
+  set_highlight("StdoutMsg", { fg = palette.fg })
 
   link_highlight("StderrMsg", "ErrorMsg")
 
