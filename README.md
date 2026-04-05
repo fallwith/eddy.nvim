@@ -16,6 +16,12 @@ Eddy's core palette is intentionally small.
 
 # Installation
 
+[vim.pack](https://neovim.io/doc/user/pack/#vim.pack)
+
+```lua
+vim.pack.add({ "https://github.com/m-mead/eddy.nvim" })
+```
+
 [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
