@@ -365,7 +365,7 @@ function M.setup(config)
   set_highlight("LspInlayHint", { fg = palette.fg_gutter, bg = palette.bg_highlight, italic = true })
   set_highlight("LspReferenceRead", { bg = palette.bg_highlight, underline = true })
   set_highlight("LspReferenceText", { bg = palette.bg_highlight, underline = true })
-  set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true })
+  set_highlight("LspReferenceWrite", { bg = palette.bg_highlight, underline = true, bold = true })
   set_highlight("LspSignatureActiveParameter", { fg = palette.blue, underline = true })
 
   link_highlight("@lsp.mod.deprecated", "DiagnosticDeprecated")
