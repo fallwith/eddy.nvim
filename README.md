@@ -20,28 +20,5 @@ Eddy's core palette is intentionally small.
 
 ```lua
 vim.pack.add({ "https://github.com/m-mead/eddy.nvim" })
-```
-
-[lazy.nvim](https://github.com/folke/lazy.nvim)
-
-```lua
-{
-  "m-mead/eddy.nvim",
-  priority = 1000,
-  config = function()
-    vim.cmd.colorscheme("eddy")
-  end
-}
-```
-
-# Configuration
-
-`oxbow` is the default theme.
-
-```lua
-require("eddy").setup({
-  theme = "oxbow",
-})
-
 vim.cmd.colorscheme("eddy")
 ```
